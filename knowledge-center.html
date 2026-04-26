@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Center | SRG Vedanta School</title>
-    <link rel="icon" type="image/png" href="./assets/favicon.png">
-    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="Explore a rich collection of spiritual resources, including audio books, stotrams, recitals, and research papers on Spiritual Intelligence.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="knowledge-page">
     <header id="header">
         <div class="container nav-container">
             <nav>
@@ -20,75 +26,164 @@
                     <li><a href="/knowledge-center.html">Knowledge Center</a></li>
                     <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
-                <a href="/contact.html" class="btn btn-primary">Join the Journey</a>
+                <a href="/index.html#contact" class="btn btn-primary gold-glow">Join the Journey</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="kc-hero" style="background: #F8F9FA; padding-top: 10rem; padding-bottom: 5rem;">
+        <!-- Hero Section -->
+        <section class="knowledge-hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/hero_clean.png') center/cover no-repeat; padding: 15rem 0 10rem;">
             <div class="container">
-                <div class="text-center">
-                    <h4 style="color: var(--secondary); letter-spacing: 3px; font-weight: 600; margin-bottom: 1rem;">COLLECTION</h4>
-                    <h1 style="font-size: 4rem; margin-bottom: 1.5rem;">Knowledge Center</h1>
-                    <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">A curated repository of recitals, meanings, and articles to support your spiritual journey.</p>
-                </div>
+                <h6 style="color: var(--secondary); letter-spacing: 5px; font-weight: 700; text-transform: uppercase; text-align: center; margin-bottom: 1.5rem;">RESOURCE ARCHIVE</h6>
+                <h1 style="color: white; font-size: 4rem; text-align: center; font-family: 'Playfair Display', serif;">Knowledge Center</h1>
+                <p style="color: rgba(255,255,255,0.9); text-align: center; max-width: 800px; margin: 2rem auto; font-size: 1.2rem;">A curated collection of authentic Vedanta resources, research papers, and audio recitals for the modern seeker.</p>
             </div>
         </section>
 
-        <section class="resources">
+        <!-- Resources Section -->
+        <section class="resources" style="padding: 8rem 0;">
             <div class="container">
-                <div class="filter-bar" style="display: flex; gap: 2rem; margin-bottom: 4rem; justify-content: center; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
-                    <a href="#" class="filter-item active" style="color: var(--primary); font-weight: 600;">All Resources</a>
-                    <a href="#" class="filter-item" style="color: var(--text-muted);">Recitals</a>
-                    <a href="#" class="filter-item" style="color: var(--text-muted);">Meanings</a>
-                    <a href="#" class="filter-item" style="color: var(--text-muted);">Audiobooks</a>
-                    <a href="#" class="filter-item" style="color: var(--text-muted);">Articles</a>
+                
+                <!-- Articles & Blogs -->
+                <div class="resource-group mb-5" style="margin-bottom: 6rem;">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem;">
+                        <span style="font-size: 2.5rem;">📄</span>
+                        <h2 style="font-size: 2.5rem;">Research & Insights</h2>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;">
+                        <a href="https://srg-vedanta-school.in/blog/content/an-understanding-of-spiritual-intelligence-(si)-from-vedanta.pdf" target="_blank" class="benefit-card" style="text-decoration: none; color: inherit; height: 100%;">
+                            <h4 style="margin-bottom: 1rem;">SI from Vedanta</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">An understanding of Spiritual Intelligence (SI) from traditional Vedanta perspectives.</p>
+                            <span style="display: inline-block; margin-top: 1.5rem; color: var(--primary); font-weight: 600;">Download PDF →</span>
+                        </a>
+                        <a href="https://srg-vedanta-school.in/blog/content/working-model-for-gaining-spiritual-intelligence-(si).pdf" target="_blank" class="benefit-card" style="text-decoration: none; color: inherit; height: 100%;">
+                            <h4 style="margin-bottom: 1rem;">Working Model of SI</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">A practical framework for gaining and applying Spiritual Intelligence in daily life.</p>
+                            <span style="display: inline-block; margin-top: 1.5rem; color: var(--primary); font-weight: 600;">Download PDF →</span>
+                        </a>
+                        <a href="https://srg-vedanta-school.in/blog/content/the-philosophy-of-work.pdf" target="_blank" class="benefit-card" style="text-decoration: none; color: inherit; height: 100%;">
+                            <h4 style="margin-bottom: 1rem;">Philosophy of Work</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Exploring the sacred dimension of action and duty in modern professional life.</p>
+                            <span style="display: inline-block; margin-top: 1.5rem; color: var(--primary); font-weight: 600;">Download PDF →</span>
+                        </a>
+                        <a href="https://srg-vedanta-school.in/blog/content/the_pdca_cycle.pdf" target="_blank" class="benefit-card" style="text-decoration: none; color: inherit; height: 100%;">
+                            <h4 style="margin-bottom: 1rem;">Gita & PDCA Cycle</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">The PDCA cycle and negative feedback loop found in the Bhagavad Gita.</p>
+                            <span style="display: inline-block; margin-top: 1.5rem; color: var(--primary); font-weight: 600;">Download PDF →</span>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="resource-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                    <!-- Placeholder Resource Cards -->
-                    <div class="resource-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);">
-                        <div class="card-image" style="background: #E1BEE7; height: 200px;"></div>
-                        <div class="card-content" style="padding: 2rem;">
-                            <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Recital</span>
-                            <h3 style="margin: 0.5rem 0 1rem;">Introduction to Vedanta</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">A peaceful audio recital covering the core foundations of the Vedic teachings.</p>
-                            <a href="#" style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">Listen Now &rarr;</a>
-                        </div>
+                <!-- Audio Books -->
+                <div class="resource-group" style="margin-bottom: 6rem;">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem;">
+                        <span style="font-size: 2.5rem;">🎧</span>
+                        <h2 style="font-size: 2.5rem;">Heritage Audio Books</h2>
                     </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <a href="https://drive.google.com/drive/folders/1OIjEzjt6taB10n_d4xdmGxlmxkZyK8QP" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Ramanuja Darshana</a>
+                        <a href="https://drive.google.com/drive/folders/1JsEGKMKjefe1su7YZQzhMr84zqgevq_v" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Sharanagati Gadyam</a>
+                        <a href="https://drive.google.com/drive/folders/17FplPCXNQVEAlZJahOp7Rl7wA2RyQLYG" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Sristava</a>
+                        <a href="https://drive.google.com/drive/folders/1m7_kUIe3y2tIo59xZbsWlxMQtM4GTr5l" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Atimanusha Stava</a>
+                        <a href="https://drive.google.com/drive/folders/1yxlnACka80jnl0QnAyr-BfiVYW2gqomi" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Geetamrutam</a>
+                    </div>
+                </div>
 
-                    <div class="resource-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);">
-                        <div class="card-image" style="background: #FFF9C4; height: 200px;"></div>
-                        <div class="card-content" style="padding: 2rem;">
-                            <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Meaning</span>
-                            <h3 style="margin: 0.5rem 0 1rem;">Decoding Inner Peace</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Exploring the Sanskrit verses that describe the path to lasting tranquility.</p>
-                            <a href="#" style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">Read Article &rarr;</a>
-                        </div>
+                <!-- Stotrams & Meanings -->
+                <div class="resource-group" style="margin-bottom: 6rem;">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem;">
+                        <span style="font-size: 2.5rem;">📜</span>
+                        <h2 style="font-size: 2.5rem;">Stotrams & Meanings</h2>
                     </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <a href="https://drive.google.com/file/d/1xi_D3gAszzkmrS2wTrUL8tRkRk1FXwiC/view?usp=drivesdk" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Gopala Vimshati (English)</a>
+                        <a href="https://drive.google.com/file/d/0B2IKuLjlAPLWelRmU1JUTjBOVHc/view?usp=drivesdk&resourcekey=0-6-DN7cVJuiiDm04OfCXO0g" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Pillaiandadi (English)</a>
+                        <a href="https://drive.google.com/file/d/1AsikvIKUaDK_X80fg8bH5PUq9CMC1bYt/view?usp=drivesdk" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Godastuti (English)</a>
+                        <a href="https://srg-vedanta-school.in/blog/content/urdhvapundrastotrm.pdf" target="_blank" class="btn btn-learn-more" style="text-align: center; padding: 1.5rem;">Urdhva Pundra Shlokas</a>
+                    </div>
+                </div>
 
-                    <div class="resource-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);">
-                        <div class="card-image" style="background: #C8E6C9; height: 200px;"></div>
-                        <div class="card-content" style="padding: 2rem;">
-                            <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Article</span>
-                            <h3 style="margin: 0.5rem 0 1rem;">SI in Modern Management</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">How CEOs are applying Spiritual Intelligence to solve corporate challenges.</p>
-                            <a href="#" style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">Read More &rarr;</a>
+                <!-- Recitals -->
+                <div class="resource-group">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem;">
+                        <span style="font-size: 2.5rem;">🕉️</span>
+                        <h2 style="font-size: 2.5rem;">Sacred Recitals Archive</h2>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+                        <a href="https://drive.google.com/drive/folders/1Go_vJk18xqtk6m9tsxZlwiZKjSubHC3i" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Abhitistavam</a>
+                        <a href="https://drive.google.com/drive/folders/11V1b4j55ZO-8gIA9vPVVISuwgcASkwfn" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Ashtabhujashtakam</a>
+                        <a href="https://drive.google.com/drive/folders/1sJQLLZaFL9Rb-RgQau8pqKorSoM9YuV8" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Bhagavaddhyanasopanam</a>
+                        <a href="https://drive.google.com/drive/folders/1AGUJfE-YEFZqlJW21m2gc2x5KTJ5uWq_" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Dashavatara stotram</a>
+                        <a href="https://drive.google.com/drive/folders/1X34WASo75TkGbypK_UGmr9j3lX26AR-U" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Dayashatakam</a>
+                        <a href="https://drive.google.com/drive/folders/1SJJrYA17x7kGzNDjOiv0w-fM_Pl7iIbx" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Dehalisha stuti</a>
+                        <a href="https://drive.google.com/drive/folders/14RDkLL6V9bz9N4xBUZoGC6iwsL6leTSL" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Desika mangalam</a>
+                        <a href="https://drive.google.com/drive/folders/1Vzl_LxwLOIvPrBEPEOeThNmuPP_0tIUR" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Garuda pancashat</a>
+                        <a href="https://drive.google.com/drive/folders/1CxFpJqdewR8Jq_4KvMw9sPCwLAyI_OsZ" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Godastuti</a>
+                        <a href="https://drive.google.com/drive/folders/15ESvMT0W3hr3gPIupcakCxbVAfYZJidl" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Hayagriva stotra</a>
+                        <a href="https://drive.google.com/drive/folders/1hxDXsHpeeVFNHCauw266JvsHqJ5kFET1" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Nyasa vimshati</a>
+                        <a href="https://drive.google.com/drive/folders/1V4bxRLP7TD_AIGPJMzcPjtb6vXOADe_7" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Nyasa dashaka</a>
+                        <a href="https://drive.google.com/drive/folders/13ijnDFBIflFTg0mVSYIJQvGFQ-R9_9Dk" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Paramartha stuti</a>
+                        <a href="https://drive.google.com/drive/folders/16aR1IItauZrzcCQ2gcScMZENbOYDrde2" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Pillaiandadi</a>
+                        <a href="https://drive.google.com/drive/folders/15H0egU2-aayAur8YmIvM86NeosrqSuJG" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Raghuveera gadhyam</a>
+                        <a href="https://drive.google.com/drive/folders/1W1bZf9Gja6Vnz4FYViafwj4lOEM5O5E7" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Sharanagati Deepika</a>
+                        <a href="https://drive.google.com/drive/folders/1A3zNkfsqc_gpje-hYx52YfUtBJrgxdZt" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Sharanagati gadhyam</a>
+                        <a href="https://drive.google.com/drive/folders/1HZOiSYXK4VItMW4oq1E34ePqHT2DHsPe" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Shodashayudha stotram</a>
+                        <a href="https://drive.google.com/drive/folders/1FqpkJ8sQuZjvZBQWMqEKWroF-vmU7IL7" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Sudharshana ashtakam</a>
+                        <a href="https://drive.google.com/drive/folders/127R45ywiIno_klo5V-PZTuEWL_giJHXe" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Vairagya pancakam</a>
+                        <a href="https://drive.google.com/drive/folders/1PY6RzRoq5kanbgsH2_TcvMuSjkVANanP" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Varadaraja pancashat</a>
+                        <a href="https://drive.google.com/drive/folders/1-6FFEQfJFQh7k0GrUMdJ8-KiD5Jqfy8Y" target="_blank" class="btn btn-learn-more" style="font-size: 0.8rem; padding: 1rem;">Yatiraja saptati</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Reusable Contact Component -->
+        <section id="contact" class="contact" style="background: #08050e; padding: 10rem 0;">
+            <div class="container">
+                <div class="contact-glass-container">
+                    <div>
+                        <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem;">GET IN TOUCH</h6>
+                        <h2>Join Our Community</h2>
+                        <p>Begin your journey towards inner peace and spiritual awareness today. Our faculty is ready to guide you.</p>
+                        
+                        <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+                                <span style="font-size: 1.5rem;">📍</span>
+                                <div>
+                                    <h5 style="margin-bottom: 0.5rem; color: var(--secondary);">Address</h5>
+                                    <p style="font-size: 0.95rem; line-height: 1.4;">188, 1A Cross Rd, Hosakerehalli Layout,<br>2nd Phase, 4th Block, Banashankari 3rd Stage,<br>Banashankari, Bengaluru, Karnataka 560085</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1.2rem; align-items: center;">
+                                <span style="font-size: 1.5rem;">📧</span>
+                                <a href="mailto:spiritualintelligenceprogram@gmail.com" style="color: white; text-decoration: none; font-size: 0.95rem;">spiritualintelligenceprogram@gmail.com</a>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="https://www.google.com/maps/search/?api=1&query=SRG+Vedanta+School+Hosakerehalli+Bengaluru" target="_blank" class="btn btn-learn-more" style="font-size: 0.85rem; padding: 0.8rem 1.5rem;">View Location Map →</a>
+                            </div>
                         </div>
                     </div>
+                    
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <input type="text" placeholder="Full Name" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;">
+                        <input type="email" placeholder="Email Address" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;">
+                        <textarea placeholder="Your Message" rows="5" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;"></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer style="padding: 5rem 0; background: #050308; color: rgba(255,255,255,0.3); text-align: center;">
         <div class="container">
-            <div class="footer-bottom">
-                &copy; 2026 SRG Vedanta School.
-            </div>
+            <img src="./assets/logo.png" alt="SRG Vedanta School" style="height: 40px; opacity: 0.3; margin-bottom: 2rem;">
+            <p style="font-size: 0.85rem;">&copy; 2026 SRG Vedanta School. All rights reserved.</p>
         </div>
     </footer>
-    <script type="module" src="./main.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>

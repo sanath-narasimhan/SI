@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | SRG Vedanta School</title>
-    <link rel="icon" type="image/png" href="./assets/favicon.png">
-    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="Get in touch with SRG Vedanta School. Join our community for spiritual intelligence, stotra classes, and traditional Vedanta discourse.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="contact-page">
     <header id="header">
         <div class="container nav-container">
             <nav>
@@ -20,57 +26,68 @@
                     <li><a href="/knowledge-center.html">Knowledge Center</a></li>
                     <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
-                <a href="/" class="btn btn-primary">Back to Home</a>
+                <a href="/index.html#contact" class="btn btn-primary gold-glow">Join the Journey</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="contact-hero" style="padding-top: 10rem; padding-bottom: 5rem;">
+        <!-- Hero Section -->
+        <section class="contact-hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/hero_clean.png') center/cover no-repeat; padding: 15rem 0 10rem;">
             <div class="container">
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <h1 style="font-size: 4rem; margin-bottom: 1.5rem;">Get in Touch</h1>
-                    <p style="color: var(--text-muted); font-size: 1.1rem;">Whether you have a question about the SI program, or want to host a corporate session, we're here to help.</p>
-                </div>
+                <h1 style="color: white; font-size: 4rem; text-align: center; font-family: 'Playfair Display', serif;">Get In Touch</h1>
+                <p style="color: rgba(255,255,255,0.9); text-align: center; max-width: 800px; margin: 2rem auto; font-size: 1.2rem;">Connect with us for authentic spiritual guidance, classes, and traditional heritage resources.</p>
             </div>
         </section>
 
-        <section class="contact-content">
+        <!-- Contact Section -->
+        <section class="contact" style="background: #fdfbff; padding: 10rem 0;">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 5rem;">
-                    <div class="contact-details">
-                        <div class="mb-4">
-                            <h3 class="mb-1">Our Office</h3>
-                            <p style="color: var(--text-muted);">SRG Vedanta School<br>123 Spiritual Way, Serenity Park<br>Bangalore, Karnataka 560001</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;">
+                    <div>
+                        <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem;">OUR LOCATION</h6>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">SRG Vedanta School</h2>
+                        
+                        <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 2.5rem;">
+                            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <span style="font-size: 2rem;">📍</span>
+                                <div>
+                                    <h5 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Address</h5>
+                                    <p style="color: var(--text-muted); line-height: 1.6;">188, 1A Cross Rd, Hosakerehalli Layout,<br>2nd Phase, 4th Block, Banashankari 3rd Stage,<br>Banashankari, Bengaluru, Karnataka 560085</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1.5rem; align-items: center;">
+                                <span style="font-size: 2rem;">📧</span>
+                                <div>
+                                    <h5 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Email</h5>
+                                    <a href="mailto:spiritualintelligenceprogram@gmail.com" style="color: var(--primary); text-decoration: none;">spiritualintelligenceprogram@gmail.com</a>
+                                </div>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="https://www.google.com/maps/search/?api=1&query=SRG+Vedanta+School+Hosakerehalli+Bengaluru" target="_blank" class="btn btn-learn-more" style="padding: 1rem 2rem;">View Location Map →</a>
+                            </div>
                         </div>
-                        <div class="mb-4">
-                            <h3 class="mb-1">Contact Info</h3>
-                            <p style="color: var(--text-muted);"><strong>Phone:</strong> +91 98860 00000</p>
-                            <p style="color: var(--text-muted);"><strong>Email:</strong> info@srg-vedanta-school.in</p>
-                        </div>
-                        <div class="mb-4">
-                            <h3 class="mb-1">Office Hours</h3>
-                            <p style="color: var(--text-muted);">Monday - Friday: 10:00 AM - 6:00 PM<br>Saturday: By Appointment</p>
+
+                        <!-- Map Embed Placeholder or Styling -->
+                        <div style="margin-top: 4rem; border-radius: 30px; overflow: hidden; height: 300px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.544158223689!2d77.534882!3d12.923869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzI1LjkiTiA3N8KwMzInMDUuNiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
-
-                    <div class="contact-form-container" style="background: white; padding: 4rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
-                        <form class="contact-form" style="display: grid; gap: 1.5rem;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                                <input type="text" placeholder="First Name" style="padding: 1rem; border: 1px solid #eee; border-radius: 10px; font-family: inherit;">
-                                <input type="text" placeholder="Last Name" style="padding: 1rem; border: 1px solid #eee; border-radius: 10px; font-family: inherit;">
+                    
+                    <div style="background: white; padding: 4rem; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+                        <h3 style="margin-bottom: 2rem; font-family: 'Playfair Display', serif;">Send us a Message</h3>
+                        <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <input type="text" placeholder="First Name" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
+                                <input type="text" placeholder="Last Name" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
                             </div>
-                            <input type="email" placeholder="Email Address" style="padding: 1rem; border: 1px solid #eee; border-radius: 10px; font-family: inherit;">
-                            <input type="tel" placeholder="Phone Number" style="padding: 1rem; border: 1px solid #eee; border-radius: 10px; font-family: inherit;">
-                            <select style="padding: 1rem; border: 1px solid #eee; border-radius: 10px; font-family: inherit;">
-                                <option value="">Subject of Interest</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="course">Spiritual Intelligence Course</option>
-                                <option value="corporate">Corporate Training</option>
-                                <option value="support">Support</option>
-                            </select>
-                            <textarea placeholder="How can we help you?" rows="5" style="padding: 1rem; border: 1px solid #eee; border-radius: 10px; font-family: inherit;"></textarea>
-                            <button type="submit" class="btn btn-primary" style="padding: 1.2rem; font-size: 1rem;">Send Message</button>
+                            <input type="email" placeholder="Email Address" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
+                            <input type="tel" placeholder="Phone Number" style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
+                            <textarea placeholder="Your Message" rows="6" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;"></textarea>
+                            <button type="submit" class="btn btn-primary gold-glow" style="padding: 1.5rem; font-size: 1.1rem; margin-top: 1rem;">Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -78,13 +95,13 @@
         </section>
     </main>
 
-    <footer>
+    <footer style="padding: 5rem 0; background: #050308; color: rgba(255,255,255,0.3); text-align: center;">
         <div class="container">
-            <div class="footer-bottom">
-                &copy; 2026 SRG Vedanta School.
-            </div>
+            <img src="./assets/logo.png" alt="SRG Vedanta School" style="height: 40px; opacity: 0.3; margin-bottom: 2rem;">
+            <p>&copy; 2026 SRG Vedanta School. All rights reserved.</p>
         </div>
     </footer>
-    <script type="module" src="./main.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>

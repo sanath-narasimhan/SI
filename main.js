@@ -1,19 +1,18 @@
-// Header scroll effect logic
 const header = document.querySelector('header');
-const isHomePage = document.body.classList.contains('home-page') || window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+// Detect if page has a hero section that requires transparency
+const hasHero = document.querySelector('[class*="hero"]');
 
 const updateHeader = () => {
     const scrollPos = window.scrollY;
-    const heroHeight = window.innerHeight - 100; // Trigger just before hero ends
+    const heroHeight = window.innerHeight - 100;
 
-    if (isHomePage) {
+    if (hasHero) {
         if (scrollPos > heroHeight) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
     } else {
-        // On other pages, navbar always has the background
         header.classList.add('scrolled');
     }
 };
