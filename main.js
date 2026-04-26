@@ -1,20 +1,23 @@
 const header = document.querySelector('header');
 // Detect if page has a hero section that requires transparency
 const hasHero = document.querySelector('.hero, .about-hero, .knowledge-hero, .contact-hero');
+const isHomePage = document.body.classList.contains('home-page');
 
 const updateHeader = () => {
     if (!header) return;
     const scrollPos = window.scrollY;
-    const heroHeight = window.innerHeight - 100;
+    
+    // Homepage uses the full hero height as threshold
+    // Sub-pages use a much smaller threshold for immediate responsiveness
+    const threshold = isHomePage ? (window.innerHeight - 100) : 50;
 
     if (hasHero) {
-        if (scrollPos > heroHeight) {
+        if (scrollPos > threshold) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
     } else {
-        // If no hero section is detected, always show the background
         header.classList.add('scrolled');
     }
 };
