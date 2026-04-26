@@ -1,12 +1,26 @@
-// Header scroll effect
+// Header scroll effect logic
 const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+const isHomePage = document.body.classList.contains('home-page') || window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+
+const updateHeader = () => {
+    const scrollPos = window.scrollY;
+    const heroHeight = window.innerHeight - 100; // Trigger just before hero ends
+
+    if (isHomePage) {
+        if (scrollPos > heroHeight) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     } else {
-        header.classList.remove('scrolled');
+        // On other pages, navbar always has the background
+        header.classList.add('scrolled');
     }
-});
+};
+
+window.addEventListener('scroll', updateHeader);
+// Initialize state on load
+updateHeader();
 
 // Immersive Kundalini Trisula (Spirals) Scroll Logic
 const energySpirals = document.querySelector('.energy-spirals');
@@ -23,8 +37,6 @@ const updateKundalini = () => {
     const windowHeight = window.innerHeight;
     const scrollPercent = scrollPos / (document.documentElement.scrollHeight - windowHeight);
     
-    // Manage Spiral Visibility & Drawing
-    // Only show spirals when reaching the roadmap section
     if (energySpirals) {
         if (scrollPos > roadmapTop - 400) {
             energySpirals.style.opacity = '1';
@@ -32,7 +44,6 @@ const updateKundalini = () => {
             energySpirals.style.opacity = '0';
         }
 
-        // Calculate drawing progress specifically from the roadmap start downwards
         const startPos = roadmapTop - 400;
         const totalPath = document.documentElement.scrollHeight - startPos - windowHeight;
         const drawPercent = Math.min(Math.max((scrollPos - startPos) / totalPath, 0), 1);
@@ -42,14 +53,12 @@ const updateKundalini = () => {
             path.style.strokeDashoffset = offset;
         });
 
-        // Move Energy Tip along the central axis (y: 800 to 0)
         if (energyTip) {
             const tipY = 800 - (drawPercent * 800);
             energyTip.setAttribute('cy', tipY);
         }
     }
     
-    // Update Backdrop Visibility
     if (kundaliniContainer) {
         const opacity = Math.min(0.1 + (scrollPercent * 0.2), 0.3);
         kundaliniContainer.style.opacity = opacity;
