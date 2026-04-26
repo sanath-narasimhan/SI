@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | SRG Vedanta School</title>
-    <link rel="icon" type="image/png" href="./assets/favicon.png">
-    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="Learn about the heritage, mission, and founder of SRG Vedanta School. Dedicated to spreading authentic traditional philosophical knowledge.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="about-page">
     <header id="header">
         <div class="container nav-container">
             <nav>
@@ -20,46 +26,117 @@
                     <li><a href="/knowledge-center.html">Knowledge Center</a></li>
                     <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
-                <a href="/contact.html" class="btn btn-primary">Join the Journey</a>
+                <a href="/index.html#contact" class="btn btn-primary gold-glow">Join the Journey</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="about-hero" style="background: var(--bg-light); padding-top: 10rem; padding-bottom: 5rem;">
+        <!-- Hero Section -->
+        <section class="about-hero" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./assets/hero_clean.png') center/cover no-repeat; padding: 15rem 0 10rem;">
             <div class="container">
-                <div class="text-center">
-                    <h1 style="font-size: 4rem; margin-bottom: 1.5rem;">About the School</h1>
-                    <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">Authentic, traditional, philosophical knowledge of Vedanta.</p>
+                <h1 style="color: white; font-size: 4rem; text-align: center; font-family: 'Playfair Display', serif;">Our Heritage & Mission</h1>
+                <p style="color: rgba(255,255,255,0.9); text-align: center; max-width: 800px; margin: 2rem auto; font-size: 1.2rem;">Authentic traditional philosophical knowledge passed down through generations of preceptors.</p>
+            </div>
+        </section>
+
+        <!-- Origin Section -->
+        <section class="origin" style="padding: 8rem 0;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+                    <div>
+                        <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem;">THE ORIGIN</h6>
+                        <h2 style="font-size: 3rem; margin-bottom: 2rem; line-height: 1.2;">Grace of the Preceptors</h2>
+                        <p style="margin-bottom: 2rem;">Sri Rangagopal school of Vedanta has been set up by the grace of the preceptors of **Dr. Usha Narasimhan**. After having studied Vedanta and passing the certification examinations in Vishishtadvaita, she was urged by her preceptor **Dr. N. S. Anantharangachar**, Vedanta Vidvan, to spread this authentic, traditional, philosophical knowledge.</p>
+                        <p>The mission of the school is to ensure that the "desirous deserving" can benefit from the deep wisdom of our ancestors, blending heritage with modern relevance.</p>
+                    </div>
+                    <div style="background: white; padding: 3rem; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+                        <img src="./assets/dr_usha.jpg" alt="Dr. Usha Narasimhan" style="width: 100%; border-radius: 20px; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Dr. Usha Narasimhan</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Founder & Principal Faculty</p>
+                        <p style="margin-top: 1rem; font-size: 0.95rem;">IIT Madras Alumna (B.Tech 1986), PhD in Spiritual Intelligence from Karnataka Sanskrit University.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="founder">
+        <!-- Philosophy Section -->
+        <section class="philosophy" style="padding: 8rem 0; background: rgba(74, 20, 140, 0.02);">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start;">
-                    <div class="founder-image" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                        <img src="./assets/dr_usha.jpg" alt="Dr. Usha Narasimhan" style="width: 100%; display: block;">
+                <div class="text-center mb-5">
+                    <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">PHILOSOPHY</h6>
+                    <h2 class="section-title">Teaching Methodology</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">📖</span>
+                        <h4>Traditional Stotras</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Teaching powerful Vedanta Desika stotras and Prabhandas for several decades.</p>
                     </div>
-                    <div class="founder-info">
-                        <p class="mb-2">Sri Rangagopal school of Vedanta has been set up by the grace of the preceptors of Dr. Usha Narasimhan. After having studied Vedanta and passing the certification examinations in Vishishtadvaita, she was urged by her preceptor Dr. N. S. Anantharangachar, Vedanta Vidvan, to spread this authentic, traditional, philosophical knowledge so that the desirous deserving can benefit.</p>
-                        <p class="mb-2">In line with that, she began teaching the powerful Vedanta Desika stotras several decades ago. Many children and adults have benefitted from the same. Classes on prabhandas have been added.</p>
-                        <p class="mb-2">Her PhD thesis titled 'a working model of spiritual intelligence...' is a course blending Vedanta with modern management techniques. This has brought relief from stress to many people - especially the working middle-aged class. This is being offered to the general public and hopes to make inroads into corporates too.</p>
-                        <p class="mb-2">Vedanta texts learnt in the traditional kalakshepam mode are taught here in this school. People desiring to perfect their knowledge of Vishishtadvaita may attend the same after due consultation with the faculty.</p>
-                        <p class="mb-2">Senior scholarly faculty members are conducting classes in this school. All classes are offered in the offline and online mode. However, offline, direct, face to face interactions with the faculty is encouraged.</p>
-                        <p class="mb-2">Dr. Usha Narasimhan, a B. Tech from IIT Madras, 1986, has also done M.A. (Sanskrit) from KSOU, MPhil, Vidvat and PhD from Karnataka Sanskrit University.</p>
-                        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--primary);">All services of the school are offered as a service to the divinity and are done only with the intention of pleasing the supreme almighty.</p>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎓</span>
+                        <h4>Kalakshepams</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Texts are taught in the traditional mode, ensuring absolute authenticity.</p>
                     </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🧠</span>
+                        <h4>Modern Integration</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">A unique model of Spiritual Intelligence blending Vedanta with management techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision" style="padding: 10rem 0; text-align: center;">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 2rem;">OUR VISION</h6>
+                    <h2 style="font-size: 2.5rem; line-height: 1.4; font-style: italic; font-family: 'Playfair Display', serif;">"All services of the school are offered as a service to the divinity and are done only with the intention of pleasing the supreme almighty."</h2>
+                    <div style="width: 80px; height: 3px; background: var(--secondary); margin: 3rem auto;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Component -->
+        <section id="contact" class="contact" style="background: #08050e; padding: 10rem 0;">
+            <div class="container">
+                <div class="contact-glass-container">
+                    <div>
+                        <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem;">GET IN TOUCH</h6>
+                        <h2>Join Our Community</h2>
+                        <p>Begin your journey towards inner peace and spiritual awareness today. Our faculty is ready to guide you.</p>
+                        
+                        <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <span style="font-size: 1.5rem;">📧</span>
+                                <a href="mailto:spiritualintelligenceprogram@gmail.com" style="color: white; text-decoration: none;">spiritualintelligenceprogram@gmail.com</a>
+                            </div>
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <span style="font-size: 1.5rem;">📍</span>
+                                <span>Bengaluru, Karnataka, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <input type="text" placeholder="Full Name" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;">
+                        <input type="email" placeholder="Email Address" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;">
+                        <textarea placeholder="Your Message" rows="5" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;"></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid #eee;">
-            <p style="font-size: 0.9rem; color: #888;">&copy; 2026 SRG Vedanta School. All rights reserved.</p>
+    <footer style="padding: 5rem 0; background: #050308; color: rgba(255,255,255,0.5); text-align: center;">
+        <div class="container">
+            <img src="./assets/logo.png" alt="SRG Vedanta School" style="height: 40px; opacity: 0.5; margin-bottom: 2rem;">
+            <p>&copy; 2026 SRG Vedanta School. All rights reserved.</p>
         </div>
     </footer>
-    <script type="module" src="./main.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>

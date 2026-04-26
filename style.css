@@ -111,7 +111,7 @@ header {
 }
 
 header.scrolled {
-  background: url('./assets/navbar_bg.png') center/cover no-repeat;
+  background: url('/assets/navbar_bg.png') center/cover no-repeat;
   padding: 0.8rem 0;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   border-bottom: 1px solid rgba(255,255,255,0.1);
