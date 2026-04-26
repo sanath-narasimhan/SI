@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Center | SRG Vedanta School</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container nav-container">
+            <nav>
+                <a href="/" class="logo">
+                    <img src="./assets/logo.png" alt="SRG Vedanta School" style="height: 50px;">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/knowledge-center.html">Knowledge Center</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+                <a href="/contact.html" class="btn btn-primary">Join the Journey</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="kc-hero" style="background: #F8F9FA; padding-top: 10rem; padding-bottom: 5rem;">
+            <div class="container">
+                <div class="text-center">
+                    <h4 style="color: var(--secondary); letter-spacing: 3px; font-weight: 600; margin-bottom: 1rem;">COLLECTION</h4>
+                    <h1 style="font-size: 4rem; margin-bottom: 1.5rem;">Knowledge Center</h1>
+                    <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">A curated repository of recitals, meanings, and articles to support your spiritual journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <div class="container">
+                <div class="filter-bar" style="display: flex; gap: 2rem; margin-bottom: 4rem; justify-content: center; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <a href="#" class="filter-item active" style="color: var(--primary); font-weight: 600;">All Resources</a>
+                    <a href="#" class="filter-item" style="color: var(--text-muted);">Recitals</a>
+                    <a href="#" class="filter-item" style="color: var(--text-muted);">Meanings</a>
+                    <a href="#" class="filter-item" style="color: var(--text-muted);">Audiobooks</a>
+                    <a href="#" class="filter-item" style="color: var(--text-muted);">Articles</a>
+                </div>
+
+                <div class="resource-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                    <!-- Placeholder Resource Cards -->
+                    <div class="resource-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);">
+                        <div class="card-image" style="background: #E1BEE7; height: 200px;"></div>
+                        <div class="card-content" style="padding: 2rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Recital</span>
+                            <h3 style="margin: 0.5rem 0 1rem;">Introduction to Vedanta</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">A peaceful audio recital covering the core foundations of the Vedic teachings.</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">Listen Now &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);">
+                        <div class="card-image" style="background: #FFF9C4; height: 200px;"></div>
+                        <div class="card-content" style="padding: 2rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Meaning</span>
+                            <h3 style="margin: 0.5rem 0 1rem;">Decoding Inner Peace</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Exploring the Sanskrit verses that describe the path to lasting tranquility.</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition);">
+                        <div class="card-image" style="background: #C8E6C9; height: 200px;"></div>
+                        <div class="card-content" style="padding: 2rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Article</span>
+                            <h3 style="margin: 0.5rem 0 1rem;">SI in Modern Management</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">How CEOs are applying Spiritual Intelligence to solve corporate challenges.</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600; font-size: 0.9rem;">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 SRG Vedanta School.
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
