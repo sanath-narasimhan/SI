@@ -6,7 +6,7 @@ const isHomePage = document.body.classList.contains('home-page');
 const updateHeader = () => {
     if (!header) return;
     const scrollPos = window.scrollY;
-    
+
     // Homepage uses the full hero height as threshold
     // Sub-pages use a much smaller threshold for immediate responsiveness
     const threshold = isHomePage ? (window.innerHeight - 100) : 50;
@@ -27,6 +27,25 @@ window.addEventListener('scroll', updateHeader);
 window.addEventListener('DOMContentLoaded', updateHeader);
 updateHeader();
 
+// Hamburger Menu Logic
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+}
+
 // Immersive Kundalini Trisula (Spirals) Scroll Logic
 const energySpirals = document.querySelector('.energy-spirals');
 const spiralPaths = document.querySelectorAll('.energy-spirals path');
@@ -36,12 +55,12 @@ const roadmapSection = document.querySelector('#roadmap');
 
 const updateKundalini = () => {
     if (!roadmapSection) return;
-    
+
     const roadmapTop = roadmapSection.offsetTop;
     const scrollPos = window.scrollY;
     const windowHeight = window.innerHeight;
     const scrollPercent = scrollPos / (document.documentElement.scrollHeight - windowHeight);
-    
+
     if (energySpirals) {
         if (scrollPos > roadmapTop - 400) {
             energySpirals.style.opacity = '1';
@@ -53,7 +72,7 @@ const updateKundalini = () => {
         const totalPath = document.documentElement.scrollHeight - startPos - windowHeight;
         const drawPercent = Math.min(Math.max((scrollPos - startPos) / totalPath, 0), 1);
         const offset = 2000 - (drawPercent * 2000);
-        
+
         spiralPaths.forEach(path => {
             path.style.strokeDashoffset = offset;
         });
@@ -63,7 +82,7 @@ const updateKundalini = () => {
             energyTip.setAttribute('cy', tipY);
         }
     }
-    
+
     if (kundaliniContainer) {
         const opacity = Math.min(0.1 + (scrollPercent * 0.2), 0.3);
         kundaliniContainer.style.opacity = opacity;
@@ -79,10 +98,10 @@ const journeySteps = document.querySelectorAll('.journey-step');
 
 const updateJourneyProgress = () => {
     if (!journeyWrapper) return;
-    
+
     const rect = journeyWrapper.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    
+
     if (rect.top < windowHeight && rect.bottom > 0) {
         journeySteps.forEach((step, index) => {
             const stepRect = step.getBoundingClientRect();
@@ -118,31 +137,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
             window.scrollTo({
                 top: targetElement.offsetTop - 100,
                 behavior: 'smooth'
             });
         }
-    });
-});
-
-// Mobile Hamburger Toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-}
-
-// Close menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (navToggle) navToggle.classList.remove('active');
-        if (navLinks) navLinks.classList.remove('active');
     });
 });
