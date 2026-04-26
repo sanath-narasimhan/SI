@@ -1,8 +1,9 @@
 const header = document.querySelector('header');
 // Detect if page has a hero section that requires transparency
-const hasHero = document.querySelector('[class*="hero"]');
+const hasHero = document.querySelector('.hero, .about-hero, .knowledge-hero, .contact-hero');
 
 const updateHeader = () => {
+    if (!header) return;
     const scrollPos = window.scrollY;
     const heroHeight = window.innerHeight - 100;
 
@@ -13,12 +14,14 @@ const updateHeader = () => {
             header.classList.remove('scrolled');
         }
     } else {
+        // If no hero section is detected, always show the background
         header.classList.add('scrolled');
     }
 };
 
+// Use both scroll and DOMContentLoaded to ensure robust state on Vercel
 window.addEventListener('scroll', updateHeader);
-// Initialize state on load
+window.addEventListener('DOMContentLoaded', updateHeader);
 updateHeader();
 
 // Immersive Kundalini Trisula (Spirals) Scroll Logic
