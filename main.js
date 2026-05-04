@@ -197,3 +197,170 @@ if (slides.length > 0) {
     showSlides(slideIndex);
     startSlideShow();
 }
+
+// Hero Slider Logic
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots = document.querySelectorAll('.hero-dot');
+let heroSlideIndex = 0;
+let heroSlideInterval;
+
+if (heroSlides.length > 0) {
+    const showHeroSlides = (n) => {
+        if (n >= heroSlides.length) heroSlideIndex = 0;
+        if (n < 0) heroSlideIndex = heroSlides.length - 1;
+
+        heroSlides.forEach(slide => {
+            slide.style.opacity = '0';
+            slide.style.pointerEvents = 'none';
+            slide.style.zIndex = '1';
+            slide.classList.remove('active');
+        });
+        
+        heroDots.forEach(dot => {
+            dot.style.background = 'rgba(255,255,255,0.3)';
+            dot.classList.remove('active');
+        });
+
+        heroSlides[heroSlideIndex].style.opacity = '1';
+        heroSlides[heroSlideIndex].style.pointerEvents = 'auto';
+        heroSlides[heroSlideIndex].style.zIndex = '2';
+        heroSlides[heroSlideIndex].classList.add('active');
+        
+        if (heroDots[heroSlideIndex]) {
+            heroDots[heroSlideIndex].style.background = '#FFD700';
+            heroDots[heroSlideIndex].classList.add('active');
+        }
+    };
+
+    heroDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(heroSlideInterval);
+            heroSlideIndex = index;
+            showHeroSlides(heroSlideIndex);
+            startHeroSlideShow();
+        });
+    });
+
+    const startHeroSlideShow = () => {
+        heroSlideInterval = setInterval(() => {
+            heroSlideIndex++;
+            showHeroSlides(heroSlideIndex);
+        }, 5000); // Change slide every 5 seconds
+    };
+
+    // Initialize
+    showHeroSlides(heroSlideIndex);
+    startHeroSlideShow();
+}
+
+// Infographic Journey Animation Logic
+const animatedDials = document.querySelectorAll('.animated-dial');
+const journeyPathFill = document.querySelector('.journey-path-fill');
+const infographicSection = document.querySelector('#infographic-journey');
+
+// Dial Observer
+const dialObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const dial = entry.target.querySelector('.dial-circle');
+            const targetPercentage = parseInt(dial.getAttribute('data-percentage'), 10);
+            const valueSpan = entry.target.querySelector('.dial-value');
+            
+            // Start the CSS animation
+            dial.style.setProperty('--p', targetPercentage);
+            
+            // Animate the number counter
+            let current = 0;
+            const duration = 2000; // 2 seconds
+            const intervalTime = 20;
+            const steps = duration / intervalTime;
+            const increment = targetPercentage / steps;
+            
+            const counter = setInterval(() => {
+                current += increment;
+                if (current >= targetPercentage) {
+                    current = targetPercentage;
+                    clearInterval(counter);
+                }
+                valueSpan.textContent = Math.round(current) + '%';
+            }, intervalTime);
+            
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+animatedDials.forEach(dial => dialObserver.observe(dial));
+
+
+// Interactive Cards Reveal Observer
+const revealElements = document.querySelectorAll('.interactive-reveal');
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            
+            // If it has children cards, stagger them
+            const cards = entry.target.querySelectorAll('.interactive-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.15}s`;
+                card.classList.add('revealed');
+            });
+            
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// SVG Path Scroll Animation
+// Initialize path lengths
+const journeyPathFills = document.querySelectorAll('.journey-path-fill');
+
+if (journeyPathFills.length > 0) {
+    journeyPathFills.forEach(path => {
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+    });
+}
+
+const updateInfographicPath = () => {
+    if (!infographicSection || journeyPathFills.length === 0) return;
+
+    const rect = infographicSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    // Check if section is in view
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        // Calculate scroll percentage through the section
+        const currentScroll = windowHeight - rect.top;
+        
+        // Animate between 10% and 60% of the section to make it move much faster!
+        let scrollPercent = (currentScroll - windowHeight * 0.1) / (rect.height * 0.6);
+        scrollPercent = Math.min(Math.max(scrollPercent, 0), 1);
+        
+        journeyPathFills.forEach(path => {
+            const pathLength = path.getTotalLength();
+            const drawLength = pathLength * scrollPercent;
+            path.style.strokeDashoffset = pathLength - drawLength;
+        });
+
+        // Mobile timeline animation
+        const mobileFill = document.querySelector('.mobile-timeline-fill');
+        if (mobileFill) {
+            mobileFill.style.height = `${scrollPercent * 100}%`;
+        }
+    }
+};
+
+window.addEventListener('scroll', updateInfographicPath);
+// Initial trigger in case it's already in view on load
+updateInfographicPath();
+
+// Initialize Lucide icons
+if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+}

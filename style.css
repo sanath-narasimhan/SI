@@ -443,6 +443,26 @@ header.scrolled .logo {
   to { opacity: 1; transform: translateX(0); }
 }
 
+/* Hero Slider (Global) */
+.hero-slider-container {
+  display: grid;
+  width: 100%;
+}
+
+.hero-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
 /* Roadmap Fixes */
 .roadmap-container {
   position: relative;
@@ -790,6 +810,353 @@ section {
     to {opacity: 1}
 }
 
+/* Interactive Infographic Section */
+.infographic-journey {
+    position: relative;
+    z-index: 5;
+}
+
+.journey-path-fill {
+    stroke-dasharray: 4500;
+    stroke-dashoffset: 4500;
+    transition: stroke-dashoffset 0.1s ease-out;
+}
+
+/* New Interactive Infographic Styling (React Port) */
+.bg-dark {
+    background-color: rgba(26, 11, 46, 0.85) !important;
+    color: white;
+    padding: 6rem 0;
+}
+
+.mobile-path, .mobile-timeline-bg, .mobile-timeline-fill {
+    display: none;
+}
+
+.journey-path-svg {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 1600px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.journey-path-fill {
+    stroke-dasharray: 4500;
+    stroke-dashoffset: 4500;
+    transition: stroke-dashoffset 0.1s ease-out;
+}
+
+.journey-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.journey-node {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.journey-node.align-left {
+    justify-content: flex-start;
+}
+
+.journey-node.align-right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.stage-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #1a0b2e; /* Opaque to hide line behind it */
+    border: 1px solid rgba(217, 70, 239, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(217, 70, 239, 0.2);
+    color: var(--secondary);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 5; /* Sit above the mobile timeline line */
+}
+
+.stage-card-icon i {
+    width: 32px;
+    height: 32px;
+    color: #d946ef;
+}
+
+.align-right .stage-card-icon i {
+    color: #c084fc;
+}
+
+.stage-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(217, 70, 239, 0.1);
+    border: 1px solid rgba(217, 70, 239, 0.2);
+    color: #d946ef;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.stage-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.stage-desc {
+    color: rgba(233, 213, 255, 0.8);
+    line-height: 1.6;
+    max-width: 36rem;
+}
+
+/* Stage 4 Tree */
+.journey-node-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.tree-container {
+    width: 16rem;
+    height: 16rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.tree-glow {
+    position: absolute;
+    inset: 0;
+    background: rgba(217, 70, 239, 0.2);
+    filter: blur(100px);
+    border-radius: 50%;
+}
+
+.tree-svg {
+    width: 100%;
+    height: 100%;
+    fill: #d946ef;
+    filter: drop-shadow(0 0 15px rgba(217, 70, 239, 0.5));
+}
+
+.tree-pulse {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.9); opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0; }
+}
+
+.tree-leaf {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    color: white;
+}
+
+.node-content {
+    background: rgba(18, 5, 36, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(217, 70, 239, 0.15);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 2; /* Ensure it stays above the SVG line */
+}
+
+/* Stage 4 Meditator Tree Image */
+.stage-4-meditator {
+    width: 250px;
+    height: 250px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.5s;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 20px rgba(217, 70, 239, 0.3));
+}
+
+.journey-node-center.revealed .stage-4-meditator {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.stage-desc-highlight {
+    color: #d946ef;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+/* Footer Layout (Benefits & Quick Wins) */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 8rem 0 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.footer-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.3), transparent);
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+}
+
+.icon-accent { color: #d946ef; }
+.icon-accent-secondary { color: #facc15; }
+
+/* Benefits List */
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.benefit-item {
+    border-left: 2px solid rgba(217, 70, 239, 0.3);
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.benefit-item:hover {
+    border-left-color: #d946ef;
+    transform: translateX(10px);
+}
+
+.benefit-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.benefit-item:hover h4 {
+    color: #f0abfc;
+}
+
+.benefit-item p {
+    color: rgba(216, 180, 254, 0.7);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Quick Wins */
+.quick-wins-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.quick-win-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 1.25rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.quick-win-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.qw-icon-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: rgba(168, 85, 247, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.qw-icon-box i {
+    width: 24px;
+    height: 24px;
+    color: #d8b4fe;
+}
+
+.quick-win-card:hover .qw-icon-box {
+    background: rgba(168, 85, 247, 0.3);
+}
+
+.qw-content h4 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #f3e8ff;
+}
+
+.qw-content p {
+    font-size: 0.875rem;
+    color: rgba(216, 180, 254, 0.6);
+}
+
+/* Interactive Reveals */
+.interactive-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.interactive-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Mobile Responsiveness & Hamburger Menu */
 .nav-toggle {
     display: none;
@@ -956,14 +1323,24 @@ section {
         flex-direction: column;
         align-items: center;
     }
+    /* Hero Slider & Stacking Fix */
+    .hero {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 140px;
+        padding-bottom: 60px;
+        align-items: flex-start !important;
+    }
 
-    /* Hero & Card scaling */
+    /* Hero & Card scaling and Safari border bug fix */
     .hero-glass-card {
         padding: 2.5rem 1.5rem !important;
         border-radius: 35px !important;
         margin: 1rem 0 !important;
         width: 100% !important;
         height: auto !important;
+        overflow: hidden; /* Fix Safari backdrop-filter bleeding outside border */
+        transform: translateZ(0); /* Hardware acceleration for Safari fix */
     }
     
     /* Hero Buttons Stacking */
@@ -972,8 +1349,6 @@ section {
         gap: 1rem !important;
         width: 100% !important;
     }
-
-    /* Force all Grids to Stack */
     .outreach-grid,
     .resource-grid,
     .audio-grid,
@@ -1050,6 +1425,83 @@ section {
 
     .journey-line {
         display: none;
+    }
+
+    /* Infographic Mobile Fixes */
+    .infographic-journey {
+        padding: 4rem 0 !important;
+    }
+
+    .journey-path-svg {
+        display: none !important; /* Hide SVG completely on mobile */
+    }
+
+    .mobile-timeline-container {
+        display: block !important;
+        position: absolute;
+        top: 60px; /* Start slightly below top to perfectly hit the first icon center */
+        bottom: 250px; /* Stop before hitting Stage 4 and footer */
+        left: 50%;
+        width: 6px;
+        transform: translateX(-50%);
+        z-index: 0;
+    }
+
+    .mobile-timeline-bg {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        background: rgba(255, 255, 255, 0.05);
+        z-index: 0;
+    }
+
+    .mobile-timeline-fill {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        background: linear-gradient(to bottom, var(--secondary), var(--primary-light));
+        box-shadow: 0 0 15px var(--secondary);
+        z-index: 1;
+        height: 0%; /* Animated via JS */
+        border-radius: 4px;
+    }
+
+    .desktop-path, .mobile-path {
+        display: none !important;
+    }
+
+    .journey-node {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 2rem !important;
+        margin-bottom: 4rem !important;
+    }
+
+    .journey-node .node-content {
+        max-width: 100% !important;
+        text-align: center !important;
+        padding: 1.5rem !important;
+    }
+
+    .journey-node .animated-dial {
+        margin: 0 auto !important;
+    }
+
+    .quick-wins {
+        padding: 2rem 1.5rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .quick-wins-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
     }
 }
 
