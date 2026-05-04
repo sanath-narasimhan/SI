@@ -146,3 +146,54 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Slideshow Logic
+let slideIndex = 0;
+let slideInterval;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const slideshowContainer = document.getElementById('whySISlideshow');
+
+if (slides.length > 0) {
+    const showSlides = (n) => {
+        if (n >= slides.length) slideIndex = 0;
+        if (n < 0) slideIndex = slides.length - 1;
+
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        slides[slideIndex].classList.add('active');
+        if (dots[slideIndex]) dots[slideIndex].classList.add('active');
+    };
+
+    window.currentSlide = (n) => {
+        clearInterval(slideInterval);
+        slideIndex = n;
+        showSlides(slideIndex);
+        startSlideShow();
+    };
+
+    window.changeSlide = (n) => {
+        clearInterval(slideInterval);
+        slideIndex += n;
+        showSlides(slideIndex);
+        startSlideShow();
+    };
+
+    const startSlideShow = () => {
+        slideInterval = setInterval(() => {
+            slideIndex++;
+            showSlides(slideIndex);
+        }, 6000); // Change slide every 6 seconds
+    };
+
+    // Pause on hover
+    if (slideshowContainer) {
+        slideshowContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        slideshowContainer.addEventListener('mouseleave', startSlideShow);
+    }
+
+    // Initialize
+    showSlides(slideIndex);
+    startSlideShow();
+}

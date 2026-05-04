@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Programs | SRG Vedanta School</title>
+    <meta name="description" content="Explore traditional heritage programs including Stotra Prabhanda Classes and Kalakshepams at SRG Vedanta School.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .program-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 30px;
+            padding: 4rem;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .program-section h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .program-section p {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 768px) {
+            .program-section {
+                padding: 2.5rem 1.5rem;
+            }
+            .knowledge-hero h1 {
+                font-size: 2.2rem !important;
+            }
+            .program-section h3 {
+                font-size: 1.8rem !important;
+                margin-bottom: 0 !important;
+            }
+            .knowledge-hero p {
+                font-size: 1rem !important;
+            }
+            .course-header {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 0.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="knowledge-page">
+    <header id="header">
+        <div class="container nav-container">
+            <nav>
+                <a href="/" class="logo">
+                    <img src="./assets/logo.png" alt="SRG Vedanta School" style="height: 50px;">
+                </a>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/knowledge-center.html">Knowledge Center</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Other Programs ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/other-programs.html#stotra">Stotra Prabhanda</a></li>
+                            <li><a href="/other-programs.html#kalakshepams">Kalakshepams</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+                <a href="/index.html#contact" class="btn btn-primary gold-glow">Join the Journey</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="knowledge-hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/hero_clean.png') center/cover no-repeat; padding: 15rem 0 10rem;">
+            <div class="container">
+                <h6 style="color: var(--secondary); letter-spacing: 5px; font-weight: 700; text-transform: uppercase; text-align: center; margin-bottom: 1.5rem;">TRADITIONAL HERITAGE</h6>
+                <h1 style="color: white; font-size: 4rem; text-align: center; font-family: 'Playfair Display', serif;">Other Programs</h1>
+                <p style="color: rgba(255,255,255,0.9); text-align: center; max-width: 800px; margin: 2rem auto; font-size: 1.25rem;">Deepen your spiritual roots through traditional discourse and sacred chants.</p>
+            </div>
+        </section>
+
+        <!-- Programs Content Section -->
+        <section class="resources" style="padding: 8rem 0;">
+            <div class="container">
+                
+                <!-- Stotra Prabhanda Classes -->
+                <div id="stotra" class="program-section">
+                    <div class="course-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                        <span style="font-size: 3rem;">📜</span>
+                        <h3>Stotra Prabhanda Classes</h3>
+                    </div>
+                    <p>
+                        Our Stotra Prabhanda classes focus on the authentic recitation and deep understanding of sacred chants and verses. 
+                        Rooted in traditional methodology, these sessions guide seekers to perfect their pronunciation while absorbing the 
+                        profound meanings behind the Stotras. Regular chanting not only purifies the mind but also prepares the individual 
+                        for higher spiritual inquiries.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Enquire for Classes</a>
+                </div>
+
+                <!-- Kalakshepams -->
+                <div id="kalakshepams" class="program-section">
+                    <div class="course-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                        <span style="font-size: 3rem;">🕉️</span>
+                        <h3>Kalakshepams (Traditional Discourse)</h3>
+                    </div>
+                    <p>
+                        Kalakshepams represent the time-honored tradition of philosophical discourse. In these immersive sessions, 
+                        complex Vedantic concepts and Puranic narratives are unpacked systematically by learned preceptors. 
+                        Designed for deep seekers of truth, Kalakshepams provide the necessary intellectual and spiritual framework 
+                        required for sustained inner growth and ultimate clarity.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Join the Next Discourse</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Reusable Contact Component -->
+        <section id="contact" class="contact" style="background: #08050e; padding: 10rem 0;">
+            <div class="container">
+                <div class="contact-glass-container">
+                    <div>
+                        <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem;">GET IN TOUCH</h6>
+                        <h2>Join Our Community</h2>
+                        <p style="font-size: 1.15rem;">Begin your journey towards inner peace and spiritual awareness today. Our faculty is ready to guide you.</p>
+                        
+                        <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+                                <span style="font-size: 1.5rem;">📍</span>
+                                <div>
+                                    <h5 style="margin-bottom: 0.5rem; color: var(--secondary);">Address</h5>
+                                    <p style="font-size: 1.05rem; line-height: 1.4;">188, 1A Cross Rd, Hosakerehalli Layout,<br>2nd Phase, 4th Block, Banashankari 3rd Stage,<br>Banashankari, Bengaluru, Karnataka 560085</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1.2rem; align-items: center;">
+                                <span style="font-size: 1.5rem;">📧</span>
+                                <a href="mailto:spiritualintelligenceprogram@gmail.com" style="color: white; text-decoration: none; font-size: 1.05rem;">spiritualintelligenceprogram@gmail.com</a>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="https://www.google.com/maps?ll=12.936771,77.540861&z=18&t=m&hl=en&gl=IN&mapclient=embed&cid=9626514937404159943" target="_blank" class="btn btn-learn-more" style="font-size: 0.95rem; padding: 0.8rem 1.5rem;">View Location Map →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <input type="text" placeholder="Full Name" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; font-size: 1.1rem;">
+                        <input type="email" placeholder="Email Address" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; font-size: 1.1rem;">
+                        <textarea placeholder="Your Message" rows="5" required style="padding: 1.2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; font-size: 1.1rem;"></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 5rem 0; background: #050308; color: rgba(255,255,255,0.3); text-align: center;">
+        <div class="container">
+            <img src="./assets/logo.png" alt="SRG Vedanta School" style="height: 40px; opacity: 0.3; margin-bottom: 2rem;">
+            <p style="font-size: 0.9rem;">&copy; 2026 SRG Vedanta School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

@@ -9,6 +9,7 @@ export default defineConfig({
         about: resolve(__dirname, 'about.html'),
         contact: resolve(__dirname, 'contact.html'),
         knowledge: resolve(__dirname, 'knowledge-center.html'),
+        other: resolve(__dirname, 'other-programs.html'),
       },
     },
   },

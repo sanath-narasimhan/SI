@@ -64,6 +64,13 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/knowledge-center.html">Knowledge Center</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Other Programs ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/other-programs.html#stotra">Stotra Prabhanda</a></li>
+                            <li><a href="/other-programs.html#kalakshepams">Kalakshepams</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
                 <a href="#contact" class="btn btn-primary gold-glow">Join the Journey</a>
@@ -242,19 +249,36 @@
                         <h6
                             style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem;">
                             THE CORE PHILOSOPHY</h6>
-                        <h2 style="font-size: 3.5rem; margin-bottom: 2rem; line-height: 1.1;">What is Spiritual
-                            Intelligence (SI)?</h2>
-                        <p style="font-size: 1.2rem; color: var(--text-dark); margin-bottom: 3rem; line-height: 1.8;">SI
-                            is the ability to stay calm and anchored in your true self — even while living in a busy,
-                            demanding world. It gives you clarity, confidence and lasting peace.</p>
+                        <h2 style="font-size: 3.5rem; margin-bottom: 2rem; line-height: 1.1;">How the Model Works</h2>
+                        
+                        <div class="slideshow-container" id="whySISlideshow">
+                            <div class="slide active">
+                                <p><strong>Experiencing Realities</strong><br><br>This course aims at experiencing the realities of the universe, bulk of which transcend the senses. By repeatedly experiencing them, one develops absolute faith in them and begins to perceive the universe as it is. Right perception leads to right decisions and then peace prevails.</p>
+                            </div>
+                            
+                            <div class="slide">
+                                <p><strong>Lecture & Practice</strong><br><br>To arrive at these experiences of the realities of the universe, lecture, practice and mentoring sessions are conducted. Presentations on the teachings of the Upanishads form the lecture sessions. After each concept is presented, practice exercises are prescribed.</p>
+                            </div>
+                            
+                            <div class="slide">
+                                <p><strong>Mentoring Sessions</strong><br><br>They are to be practiced through the week, the outcomes journaled and collated and reported during the weekly practice and mentoring session. During these sessions, each individual's report is discussed, tips are shared for bettering the practice of the concept.</p>
+                            </div>
+                            
+                            <div class="slide">
+                                <p><strong>Internalization</strong><br><br>These mentoring sessions are repeated until the group reaches the targeted metric set for practice of the concept. Then a presentation of the next concept is made and practice sessions for that are repeated. This way, each concept of Vedanta is internalized.<br><br><em>This working model of gaining spiritual Intelligence is a doctoral thesis.</em></p>
+                            </div>
 
-                        <div
-                            style="display: flex; gap: 2rem; align-items: center; background: rgba(124, 67, 189, 0.03); padding: 2.5rem; border-radius: 40px; border-left: 5px solid var(--primary); backdrop-filter: blur(10px);">
-                            <div style="font-size: 2.5rem;">☀️</div>
-                            <div>
-                                <h4 style="margin-bottom: 0.5rem; font-size: 1.4rem;">Internal Awakening</h4>
-                                <p style="color: var(--text-muted); font-style: italic; font-size: 1.1rem;">"A journey
-                                    to unlock your true potential from within."</p>
+                            <div class="slide-nav">
+                                <div class="slide-dots">
+                                    <span class="dot active" onclick="currentSlide(0)"></span>
+                                    <span class="dot" onclick="currentSlide(1)"></span>
+                                    <span class="dot" onclick="currentSlide(2)"></span>
+                                    <span class="dot" onclick="currentSlide(3)"></span>
+                                </div>
+                                <div style="display: flex; gap: 1rem;">
+                                    <span class="slide-arrow" onclick="changeSlide(-1)">&#10094;</span>
+                                    <span class="slide-arrow" onclick="changeSlide(1)">&#10095;</span>
+                                </div>
                             </div>
                         </div>
                     </div>
