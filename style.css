@@ -216,7 +216,7 @@ header.scrolled .logo {
 /* Outreach Flip Cards */
 .outreach-card {
   perspective: 1000px;
-  height: 350px;
+  height: 260px;
   cursor: pointer;
 }
 
@@ -239,7 +239,7 @@ header.scrolled .logo {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 25px;
-  padding: 3rem 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -448,14 +448,14 @@ header.scrolled .logo {
 .testimonial-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 8rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .z-row {
   display: flex;
   align-items: center;
-  gap: 5rem;
-  margin-bottom: 7rem;
+  gap: 3rem;
+  margin-bottom: 4rem;
 }
 
 .z-row:last-child {
@@ -638,7 +638,7 @@ header.scrolled .logo {
 .hero-glass-card {
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(40px) saturate(180%);
-  padding: 5rem;
+  padding: 3.5rem;
   border-radius: 60px;
   max-width: 700px;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -793,10 +793,125 @@ header.scrolled .logo {
 /* Outreach Section Fixes */
 .outreach-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  max-width: 1000px;
-  margin: 4rem auto 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+@media (max-width: 900px) {
+  .outreach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .outreach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SI Circle Layout for perfect symmetry */
+.si-circle-container {
+    position: relative;
+    max-width: 1000px;
+    height: 550px;
+    margin: 4rem auto 6rem;
+}
+
+.si-card-item {
+    position: absolute;
+    width: 280px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.pos-top-center {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.pos-top-left {
+    top: 20%;
+    left: 0;
+    text-align: right;
+}
+.pos-top-left h4 { justify-content: flex-end; }
+
+.pos-bottom-left {
+    top: 60%;
+    left: 5%;
+    text-align: right;
+}
+.pos-bottom-left h4 { justify-content: flex-end; }
+
+.pos-top-right {
+    top: 20%;
+    right: 0;
+    text-align: left;
+}
+.pos-top-right h4 { justify-content: flex-start; }
+
+.pos-bottom-right {
+    top: 60%;
+    right: 5%;
+    text-align: left;
+}
+.pos-bottom-right h4 { justify-content: flex-start; }
+
+@media (min-width: 901px) {
+  @keyframes float-gentle {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes float-gentle-center {
+    0% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -15px); }
+    100% { transform: translate(-50%, 0); }
+  }
+  .float-desktop-1 { animation: float-gentle-center 4s ease-in-out infinite; }
+  .float-desktop-2 { animation: float-gentle 5s ease-in-out infinite 1s; }
+  .float-desktop-3 { animation: float-gentle 4.5s ease-in-out infinite 0.5s; }
+  .float-desktop-4 { animation: float-gentle 5.5s ease-in-out infinite 1.5s; }
+  .float-desktop-5 { animation: float-gentle 4s ease-in-out infinite 2s; }
+}
+
+@media (max-width: 900px) {
+    .si-circle-container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        margin: 2rem auto 4rem;
+    }
+    .si-card-item {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        text-align: center !important;
+        width: 100%;
+        max-width: 350px;
+    }
+    .si-card-item h4 {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+  .si-benefits-grid, .si-results-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .outreach-card {

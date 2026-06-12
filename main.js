@@ -51,7 +51,7 @@ const energySpirals = document.querySelector('.energy-spirals');
 const spiralPaths = document.querySelectorAll('.energy-spirals path');
 const energyTip = document.querySelector('.energy-tip');
 const kundaliniContainer = document.querySelector('.kundalini-container');
-const roadmapSection = document.querySelector('#roadmap');
+const roadmapSection = document.querySelector('#si-journey');
 
 const updateKundalini = () => {
     if (!roadmapSection) return;
@@ -139,8 +139,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
+            const yOffset = -100;
+            const y = targetElement.getBoundingClientRect().top + window.scrollY + yOffset;
             window.scrollTo({
-                top: targetElement.offsetTop - 100,
+                top: y,
                 behavior: 'smooth'
             });
         }
