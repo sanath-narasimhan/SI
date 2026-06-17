@@ -839,28 +839,28 @@ header.scrolled .logo {
 
 .pos-top-left {
     top: 20%;
-    left: 0;
+    left: -18%;
     text-align: right;
 }
 .pos-top-left h4 { justify-content: flex-end; }
 
 .pos-bottom-left {
     top: 60%;
-    left: 5%;
+    left: -8%;
     text-align: right;
 }
 .pos-bottom-left h4 { justify-content: flex-end; }
 
 .pos-top-right {
     top: 20%;
-    right: 0;
+    right: -18%;
     text-align: left;
 }
 .pos-top-right h4 { justify-content: flex-start; }
 
 .pos-bottom-right {
     top: 60%;
-    right: 5%;
+    right: -8%;
     text-align: left;
 }
 .pos-bottom-right h4 { justify-content: flex-start; }

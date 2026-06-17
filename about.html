@@ -59,42 +59,62 @@
             </div>
         </section>
 
-        <!-- Intro Section -->
-        <section class="intro section-white" style="padding: 5rem 0;">
+        <!-- Intro & Vision/Mission Section -->
+        <section class="intro-mv-section section-white" style="padding: 6rem 0; position: relative;">
             <div class="container">
-                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 2rem; line-height: 1.8;">
-                        The SRG School of Vedanta, founded by Dr. Usha Narasimhan, is dedicated to making the timeless wisdom of Vedanta practical and relevant for modern living. Our programs help individuals understand themselves better, manage stress, and lead peaceful, meaningful, and fulfilling lives.
-                    </p>
-                    <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8;">
-                        Rooted in authentic Vedantic teaching, we bridge ancient knowledge with contemporary challenges such as anxiety, fear, and emotional imbalance. Through structured, application-oriented learning, participants develop clarity, resilience, and inner stability.
-                    </p>
-                    <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;">
-                        With over a hundred individuals trained, SRG School of Vedanta continues to nurture a growing community committed to self-discovery, inner growth, and lasting well-being.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Vision & Mission -->
-        <section class="vision-mission section-light" style="padding: 5rem 0; position: relative; border-top: 1px solid rgba(74, 20, 140, 0.05); border-bottom: 1px solid rgba(74, 20, 140, 0.05);">
-            <div class="container">
-                <div class="mission-vision-grid">
-                    <div class="mv-card">
-                        <span class="mv-icon">👁️</span>
-                        <h6 style="color: var(--secondary); letter-spacing: 3px; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">VISION</h6>
-                        <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Empowering Growth</h3>
-                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
-                            To empower every individual — students, professionals, homemakers, and spiritual seekers — to unlock their inner strength and live with clarity, resilience, and sustained joy.
+                <style>
+                    .intro-mv-grid {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 4rem;
+                        align-items: start;
+                    }
+                    @media (min-width: 1024px) {
+                        .intro-mv-grid {
+                            grid-template-columns: 1.2fr 1fr;
+                            gap: 5rem;
+                        }
+                    }
+                    .mv-cards-column {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 2rem;
+                    }
+                </style>
+                <div class="intro-mv-grid">
+                    <!-- Left: Intro Text -->
+                    <div style="text-align: left;">
+                        <h6 style="color: var(--secondary); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem;">OUR FOUNDATION</h6>
+                        <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">The SRG School of Vedanta</h2>
+                        <p style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 2rem; line-height: 1.8;">
+                            The SRG School of Vedanta, founded by Dr. Usha Narasimhan, is dedicated to making the timeless wisdom of Vedanta practical and relevant for modern living. Our programs help individuals understand themselves better, manage stress, and lead peaceful, meaningful, and fulfilling lives.
+                        </p>
+                        <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8;">
+                            Rooted in authentic Vedantic teaching, we bridge ancient knowledge with contemporary challenges such as anxiety, fear, and emotional imbalance. Through structured, application-oriented learning, participants develop clarity, resilience, and inner stability.
+                        </p>
+                        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;">
+                            With over a hundred individuals trained, SRG School of Vedanta continues to nurture a growing community committed to self-discovery, inner growth, and lasting well-being.
                         </p>
                     </div>
-                    <div class="mv-card">
-                        <span class="mv-icon">🚀</span>
-                        <h6 style="color: var(--secondary); letter-spacing: 3px; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">MISSION</h6>
-                        <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Practical Wisdom</h3>
-                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
-                            To make Spiritual Intelligence practical and accessible through a structured 5-stage journey that combines ancient wisdom with modern tools, daily reflection, and compassionate mentorship.
-                        </p>
+
+                    <!-- Right: Vision & Mission Cards -->
+                    <div class="mv-cards-column">
+                        <div class="mv-card">
+                            <span class="mv-icon">👁️</span>
+                            <h6 style="color: var(--secondary); letter-spacing: 3px; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">VISION</h6>
+                            <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Empowering Growth</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
+                                To empower every individual — students, professionals, homemakers, and spiritual seekers — to unlock their inner strength and live with clarity, resilience, and sustained joy.
+                            </p>
+                        </div>
+                        <div class="mv-card">
+                            <span class="mv-icon">🚀</span>
+                            <h6 style="color: var(--secondary); letter-spacing: 3px; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">MISSION</h6>
+                            <h3 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Practical Wisdom</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
+                                To make Spiritual Intelligence practical and accessible through a structured 5-stage journey that combines ancient wisdom with modern tools, daily reflection, and compassionate mentorship.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,14 +128,55 @@
                     <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Meet Our Mentors</h2>
                 </div>
 
-                <!-- Profile 1: Dr. Usha Narasimhan (Main Profile) -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; margin-bottom: 8rem;" class="mentor-main">
+                <style>
+                    .mentors-split-layout {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 4rem;
+                    }
+                    @media (min-width: 1024px) {
+                        .mentors-split-layout {
+                            grid-template-columns: 1fr 1fr;
+                            gap: 4rem;
+                            align-items: start;
+                        }
+                    }
+                    .reduced-img-wrapper {
+                        flex-shrink: 0;
+                        width: 150px;
+                        background: white;
+                        padding: 0.5rem;
+                        border-radius: 20px;
+                        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                        border: 1px solid #f0f0f0;
+                    }
+                    .reduced-img-wrapper img {
+                        width: 100%;
+                        border-radius: 15px;
+                        display: block;
+                    }
+                    @media (min-width: 768px) {
+                        .reduced-img-wrapper {
+                            width: 200px;
+                        }
+                    }
+                </style>
+
+                <div class="mentors-split-layout">
+                    <!-- Profile 1: Dr. Usha Narasimhan (Main Profile) -->
                     <div>
-                        <span style="color: var(--secondary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: block;">FOUNDER & PRINCIPAL FACULTY</span>
-                        <h3 style="font-size: 2.8rem; margin-bottom: 1.5rem; color: var(--primary);">Dr. Usha Narasimhan</h3>
-                        <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
-                            <strong>Ph.D. (Vedanta), M.A., M.Phil., Vidvat, B.Tech (IIT Chennai)</strong>
-                        </p>
+                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                            <div class="reduced-img-wrapper">
+                                <img src="./assets/Dr Usha Narasimhan.jpeg" alt="Dr. Usha Narasimhan" class="founder-image">
+                            </div>
+                            <div style="flex: 1; min-width: 250px;">
+                                <span style="color: var(--secondary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; display: block;">FOUNDER & PRINCIPAL FACULTY</span>
+                                <h3 style="font-size: 2.4rem; margin-bottom: 0.5rem; color: var(--primary);">Dr. Usha Narasimhan</h3>
+                                <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">
+                                    <strong>Ph.D. (Vedanta), M.A., M.Phil., Vidvat, B.Tech (IIT Chennai)</strong>
+                                </p>
+                            </div>
+                        </div>
                         <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 1.5rem;">
                             Dr. Usha Narasimhan is a dedicated spiritual aspirant, educator, and thought leader in the field of Vedanta, committed to guiding individuals toward a peaceful, meaningful, and fulfilling life. She is the founder of the SRG School of Vedanta, an initiative that has successfully trained over a hundred individuals in the practical application of Vedantic wisdom for inner balance and clarity.
                         </p>
@@ -126,35 +187,40 @@
                             Prior to her full-time engagement in spiritual teaching, she worked as a project management consultant and PMP trainer. Her courses emphasize practical application and inner transformation, helping participants manage stress and build emotional resilience.
                         </p>
                     </div>
-                    <div style="background: white; padding: 2rem; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; overflow: hidden;">
-                        <img src="./assets/Dr Usha Narasimhan.jpeg" alt="Dr. Usha Narasimhan" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); display: block;" class="founder-image">
-                    </div>
-                </div>
 
-                <!-- Other Mentors -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
-                    <!-- Smt. Sowmya Rajagopal -->
-                    <div style="background: white; padding: 3rem; border-radius: 30px; border: 1px solid rgba(74, 20, 140, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: all 0.3s ease;" class="mentor-card-simple">
-                        <div class="mentor-image-container">
-                            <img src="./assets/Sowmya Rajagopal.jpeg" alt="Smt. Sowmya Rajagopal">
+                    <!-- Other Mentors -->
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 3rem;">
+                        <!-- Smt. Sowmya Rajagopal -->
+                        <div style="background: white; padding: 2.5rem; border-radius: 30px; border: 1px solid rgba(74, 20, 140, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: all 0.3s ease;" class="mentor-card-simple">
+                            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                <div style="width: 100px; height: 100px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 3px solid rgba(74, 20, 140, 0.1);">
+                                    <img src="./assets/Sowmya Rajagopal.jpeg" alt="Smt. Sowmya Rajagopal" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.6rem; margin-bottom: 0.3rem; color: var(--primary);">Smt. Sowmya Rajagopal</h4>
+                                    <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block;">Learning Designer & Mentor</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.7;">
+                                Smt. Sowmya Rajagopal is a learning designer with over 20 years of experience, including 8+ years in eLearning and prior experience as an embedded systems designer. A PMP-certified professional with a background in Electronics and Communication Engineering, she brings a structured yet creative approach to learning. Currently pursuing a Bachelor’s in Viśiṣṭādvaita Vedānta, she contributes as a mentor to the Spiritual Intelligence Program.
+                            </p>
                         </div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">Smt. Sowmya Rajagopal</h4>
-                        <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; display: block;">Learning Designer & Mentor</span>
-                        <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.7;">
-                            Smt. Sowmya Rajagopal is a learning designer with over 20 years of experience, including 8+ years in eLearning and prior experience as an embedded systems designer. A PMP-certified professional with a background in Electronics and Communication Engineering, she brings a structured yet creative approach to learning. Currently pursuing a Bachelor’s in Viśiṣṭādvaita Vedānta, she contributes as a mentor to the Spiritual Intelligence Program.
-                        </p>
-                    </div>
 
-                    <!-- Smt. Sujatha Varadharajan -->
-                    <div style="background: white; padding: 3rem; border-radius: 30px; border: 1px solid rgba(74, 20, 140, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: all 0.3s ease;" class="mentor-card-simple">
-                        <div class="mentor-image-container">
-                            <img src="./assets/Sujatha Varadharajan.jpeg" alt="Smt. Sujatha Varadharajan">
+                        <!-- Smt. Sujatha Varadharajan -->
+                        <div style="background: white; padding: 2.5rem; border-radius: 30px; border: 1px solid rgba(74, 20, 140, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: all 0.3s ease;" class="mentor-card-simple">
+                            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                <div style="width: 100px; height: 100px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 3px solid rgba(74, 20, 140, 0.1);">
+                                    <img src="./assets/Sujatha Varadharajan.jpeg" alt="Smt. Sujatha Varadharajan" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1.6rem; margin-bottom: 0.3rem; color: var(--primary);">Smt. Sujatha Varadharajan</h4>
+                                    <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block;">Mentor</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.7;">
+                                With over 18 years of global corporate experience across leading MNCs, Sujatha brings a unique blend of operational excellence and spiritual depth to the role of Mentor. Known for her people-centric leadership, she combines corporate insight with a grounded understanding of human values. Over the past few years, she has been deeply studying and practicing Vedanta under the guidance of Dr. Usha Narasimhan.
+                            </p>
                         </div>
-                        <h4 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">Smt. Sujatha Varadharajan</h4>
-                        <span style="color: var(--secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; display: block;">Mentor</span>
-                        <p style="color: var(--text-dark); font-size: 1rem; line-height: 1.7;">
-                            With over 18 years of global corporate experience across leading MNCs, Sujatha brings a unique blend of operational excellence and spiritual depth to the role of Mentor. Known for her people-centric leadership, she combines corporate insight with a grounded understanding of human values. Over the past few years, she has been deeply studying and practicing Vedanta under the guidance of Dr. Usha Narasimhan.
-                        </p>
                     </div>
                 </div>
             </div>
