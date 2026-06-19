@@ -366,3 +366,54 @@ updateInfographicPath();
 if (typeof lucide !== 'undefined') {
     lucide.createIcons();
 }
+
+// Dynamic Reviews Logic
+const loadDynamicReviews = async () => {
+    const videoContainer = document.getElementById('dynamicVideoReviews');
+    const textContainer = document.getElementById('dynamicTextReviews');
+    
+    if (!videoContainer && !textContainer) return;
+    
+    try {
+        const response = await fetch('./reviews.json');
+        if (!response.ok) throw new Error('Failed to fetch reviews');
+        
+        const reviews = await response.json();
+        
+        const videoReviews = reviews.filter(r => r.type === 'video');
+        const textReviews = reviews.filter(r => r.type === 'text');
+        
+        if (videoContainer && videoReviews.length > 0) {
+            videoContainer.innerHTML = videoReviews.map(review => `
+                <div class="video-slide">
+                    <div class="z-video-container" style="border-radius: 15px; margin-bottom: 1.5rem;">
+                        <video controls preload="metadata">
+                            <source src="${review.mediaUrl}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div style="text-align: center; padding: 0 1rem;">
+                        <p style="font-style: italic; color: var(--text-dark); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">"${review.content}"</p>
+                        <strong style="color: var(--primary); font-size: 1.1rem; display: block;">${review.name}</strong>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">${review.role || ''}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        if (textContainer && textReviews.length > 0) {
+            textContainer.innerHTML = textReviews.map(review => `
+                <div class="text-review-card">
+                    <p style="font-style: italic; color: var(--text-dark); margin-bottom: 1.5rem; line-height: 1.6;">"${review.content}"</p>
+                    <div>
+                        <strong style="color: var(--secondary); display: block; font-size: 1rem;">${review.name}</strong>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">${review.role || ''}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+    } catch (error) {
+        console.error('Failed to load dynamic reviews:', error);
+    }
+};
+
+window.addEventListener('DOMContentLoaded', loadDynamicReviews);

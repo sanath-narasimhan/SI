@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fbf9fd;
+            color: #333;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            color: #4a148c;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+        input[type="text"], input[type="password"], textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+            color: #333;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add New Review</h1>
+        <form id="reviewForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Admin Password <span class="required">*</span></label>
+                <input type="password" name="password" required placeholder="Enter the admin password">
+            </div>
+
+            <div class="form-group">
+                <label>Review Type</label>
+                <select name="type" id="reviewType" onchange="toggleVideoUpload()">
+                    <option value="text">Text Only Review</option>
+                    <option value="video">Video Review</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Reviewer Name <span class="required">*</span></label>
+                <input type="text" name="name" required placeholder="e.g. John Doe">
+            </div>
+
+            <div class="form-group">
+                <label>Reviewer Role / Title</label>
+                <input type="text" name="role" placeholder="e.g. IT Professional">
+            </div>
+
+            <div class="form-group" id="videoUploadGroup" style="display: none;">
+                <label>Upload Video (.mp4) <span class="required">*</span></label>
+                <input type="file" name="video" id="videoFile" accept="video/mp4,video/webm,video/ogg">
+                <small style="color: #666; display: block; margin-top: 5px;">File must be smaller than what your Hostinger plan allows (usually 64MB or 128MB).</small>
+            </div>
+
+            <div class="form-group">
+                <label>Text Summary / Content <span class="required">*</span></label>
+                <textarea name="content" rows="5" required placeholder="Write the review text or a summary of the video..."></textarea>
+                <small style="color: #666; display: block; margin-top: 5px;">Even if a video is uploaded, a text summary is required.</small>
+            </div>
+
+            <button type="submit" id="submitBtn">Upload Review</button>
+            <div id="statusMessage" class="message"></div>
+        </form>
+    </div>
+
+    <script>
+        function toggleVideoUpload() {
+            const type = document.getElementById('reviewType').value;
+            const videoGroup = document.getElementById('videoUploadGroup');
+            const videoInput = document.getElementById('videoFile');
+            
+            if (type === 'video') {
+                videoGroup.style.display = 'block';
+                videoInput.required = true;
+            } else {
+                videoGroup.style.display = 'none';
+                videoInput.required = false;
+            }
+        }
+
+        document.getElementById('reviewForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const btn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('statusMessage');
+            
+            btn.disabled = true;
+            btn.innerText = 'Uploading... Please wait';
+            statusDiv.className = 'message';
+            statusDiv.innerText = '';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/upload_review.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    statusDiv.className = 'message success';
+                    statusDiv.innerText = 'Success! Review has been added to the website.';
+                    form.reset();
+                    toggleVideoUpload();
+                } else {
+                    statusDiv.className = 'message error';
+                    statusDiv.innerText = 'Error: ' + result.error;
+                }
+            } catch (error) {
+                statusDiv.className = 'message error';
+                statusDiv.innerText = 'An unexpected error occurred. Make sure you are running this on Hostinger.';
+                console.error(error);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'Upload Review';
+            }
+        });
+    </script>
+</body>
+</html>

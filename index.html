@@ -869,61 +869,14 @@
                     <button onclick="document.querySelector('.video-slider-container').scrollBy({left: -800, behavior: 'smooth'})" style="position: absolute; left: -20px; top: 40%; transform: translateY(-50%); z-index: 10; background: var(--primary); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-size: 1.2rem; transition: transform 0.2s;">❮</button>
                     <button onclick="document.querySelector('.video-slider-container').scrollBy({left: 800, behavior: 'smooth'})" style="position: absolute; right: -20px; top: 40%; transform: translateY(-50%); z-index: 10; background: var(--primary); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-size: 1.2rem; transition: transform 0.2s;">❯</button>
 
-                    <div class="video-slider-container">
-                        <!-- Sampath -->
-                        <div class="video-slide">
-                            <div class="z-video-container" style="border-radius: 15px; margin-bottom: 1.5rem;">
-                                <video controls preload="metadata">
-                                    <source src="./assets/reviews/Video Project 1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div style="text-align: center; padding: 0 1rem;">
-                                <p style="font-style: italic; color: var(--text-dark); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">"Before the Spiritual Intelligence (SI) program, I felt immense pressure at work, carrying the weight of being responsible for every outcome. That shift in perspective transformed me into a much lighter, stress-free person. I highly recommend everyone experience this training!"</p>
-                                <strong style="color: var(--primary); font-size: 1.1rem; display: block;">Sampath</strong>
-                                <span style="color: var(--text-muted); font-size: 0.9rem;">IT Professional</span>
-                            </div>
-                        </div>
-
-                        <!-- Namratha -->
-                        <div class="video-slide">
-                            <div class="z-video-container" style="border-radius: 15px; margin-bottom: 1.5rem;">
-                                <video controls preload="metadata">
-                                    <source src="./assets/reviews/Namratha Gopinath. Payroll Trainee 026-06-13 at 12.18.43.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div style="text-align: center; padding: 0 1rem;">
-                                <p style="font-style: italic; color: var(--text-dark); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">"Before attending the SI program, I was confused and lacked consistency. This course helped me develop deep emotional balance and calmness. Diary keeping (spiritual journaling) has been especially impactful in identifying the divine presence in my daily life."</p>
-                                <strong style="color: var(--primary); font-size: 1.1rem; display: block;">Namratha Gopinath</strong>
-                                <span style="color: var(--text-muted); font-size: 0.9rem;">Payroll Trainee</span>
-                            </div>
-                        </div>
-
-                        <!-- Priya -->
-                        <div class="video-slide">
-                            <div class="z-video-container" style="border-radius: 15px; margin-bottom: 1.5rem;">
-                                <video controls preload="metadata">
-                                    <source src="./assets/reviews/Priya Ganesh, Homemaker 2026-06-13 at 12.19.42 .mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div style="text-align: center; padding: 0 1rem;">
-                                <p style="font-style: italic; color: var(--text-dark); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">"To have a peaceful, blissful, tension-free life and enjoying God's role in each and every moment... the SI course is the most powerful tool. I have noticed a great change in my life after attending. I highly request everyone to attend and get the maximum benefit."</p>
-                                <strong style="color: var(--primary); font-size: 1.1rem; display: block;">Priya Ganesh</strong>
-                                <span style="color: var(--text-muted); font-size: 0.9rem;">Homemaker</span>
-                            </div>
-                        </div>
+                    <div class="video-slider-container" id="dynamicVideoReviews">
+                        <!-- Video reviews will be injected here dynamically -->
                     </div>
                 </div>
 
                 <!-- Text Reviews Grid -->
-                <div class="text-reviews-grid">
-                    <!-- Karuna Text -->
-                    <div class="text-review-card">
-                        <p style="font-style: italic; color: var(--text-dark); margin-bottom: 1.5rem; line-height: 1.6;">"This program completely changed my thought process and approach to life. With the divine knowledge shared, my health improved and I started dealing with day-to-day stress with so much clarity and peace."</p>
-                        <div>
-                            <strong style="color: var(--secondary); display: block; font-size: 1rem;">Karuna</strong>
-                            <span style="color: var(--text-muted); font-size: 0.85rem;">Artist (Former Software Engineer)</span>
-                        </div>
-                    </div>
+                <div class="text-reviews-grid" id="dynamicTextReviews">
+                    <!-- Text reviews will be injected here dynamically -->
                 </div>
             </div>
         </section>
