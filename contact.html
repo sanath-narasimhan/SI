@@ -105,19 +105,20 @@
                         <h3 style="margin-bottom: 2rem; font-family: 'Playfair Display', serif;">Send us a Message</h3>
                         <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                <input type="text" placeholder="First Name" required
+                                <input type="text" name="firstName" id="firstName" placeholder="First Name" required
                                     style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
-                                <input type="text" placeholder="Last Name" required
+                                <input type="text" name="lastName" id="lastName" placeholder="Last Name" required
                                     style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
                             </div>
-                            <input type="email" placeholder="Email Address" required
+                            <input type="email" name="email" id="email" placeholder="Email Address" required
                                 style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
-                            <input type="tel" placeholder="Phone Number"
+                            <input type="tel" name="phone" id="phone" placeholder="Phone Number"
                                 style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;">
-                            <textarea placeholder="Your Message" rows="6" required
+                            <textarea name="message" id="message" placeholder="Your Message" rows="6" required
                                 style="padding: 1.2rem; border-radius: 15px; border: 1px solid #eee; background: #fafafa;"></textarea>
-                            <button type="submit" class="btn btn-primary gold-glow"
+                            <button type="submit" id="submitContactBtn" class="btn btn-primary gold-glow"
                                 style="padding: 1.5rem; font-size: 1.1rem; margin-top: 1rem;">Send Message</button>
+                            <div id="contactStatusMessage" style="display: none; padding: 1rem; border-radius: 8px; margin-top: 1rem;"></div>
                         </form>
                     </div>
                 </div>

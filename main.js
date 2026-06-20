@@ -417,3 +417,86 @@ const loadDynamicReviews = async () => {
 };
 
 window.addEventListener('DOMContentLoaded', loadDynamicReviews);
+
+// Contact Form Submission Logic
+const contactForms = document.querySelectorAll('#contactForm, .contact-form');
+contactForms.forEach(form => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const btn = form.querySelector('button[type="submit"]');
+        let statusDiv = form.querySelector('#contactStatusMessage, .contactStatusMessage');
+        
+        // If status div doesn't exist in this form, create it dynamically
+        if (!statusDiv) {
+            statusDiv = document.createElement('div');
+            statusDiv.className = 'contactStatusMessage';
+            statusDiv.style.display = 'none';
+            statusDiv.style.padding = '1rem';
+            statusDiv.style.borderRadius = '8px';
+            statusDiv.style.marginTop = '1rem';
+            form.appendChild(statusDiv);
+        }
+        
+        const formData = new FormData(form);
+        
+        // If the form has a "Full Name" instead of firstName/lastName, map it
+        if (formData.has('fullName') && !formData.has('firstName')) {
+            const names = formData.get('fullName').split(' ');
+            formData.set('firstName', names[0]);
+            if (names.length > 1) {
+                formData.set('lastName', names.slice(1).join(' '));
+            }
+        }
+        // Fallback mapping if input names are missing but placeholders exist
+        if (!formData.has('firstName')) {
+            const inputs = form.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                if (input.placeholder && input.placeholder.toLowerCase().includes('name') && !formData.has('firstName')) {
+                    formData.set('firstName', input.value);
+                }
+                if (input.placeholder && input.placeholder.toLowerCase().includes('email') && !formData.has('email')) {
+                    formData.set('email', input.value);
+                }
+                if (input.tagName === 'TEXTAREA' && !formData.has('message')) {
+                    formData.set('message', input.value);
+                }
+            });
+        }
+        
+        btn.disabled = true;
+        btn.innerText = 'Sending...';
+        statusDiv.style.display = 'block';
+        statusDiv.style.background = '#e2e3e5';
+        statusDiv.style.color = '#383d41';
+        statusDiv.innerText = 'Processing your request...';
+
+        try {
+            const response = await fetch('/submit_contact.php', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                statusDiv.style.background = '#d4edda';
+                statusDiv.style.color = '#155724';
+                statusDiv.innerText = 'Thank you! Your message has been successfully sent.';
+                form.reset();
+            } else {
+                statusDiv.style.background = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+                statusDiv.innerText = 'Error: ' + (result.error || 'Failed to send message.');
+            }
+        } catch (error) {
+            statusDiv.style.background = '#f8d7da';
+            statusDiv.style.color = '#721c24';
+            statusDiv.innerText = 'An unexpected error occurred. Please try again later.';
+            console.error('Contact form error:', error);
+        } finally {
+            btn.disabled = false;
+            btn.innerText = 'Send Message';
+        }
+    });
+});
